@@ -6,7 +6,7 @@ public class CameraControled : MonoBehaviour
 {
     public float rotateSpeed = 10.0f; //скорость, с которой вращается камера
     public float speed = 10.0f; //скорость движения камеры
-    public float zoomSpeed = 100.0f; //скорость приблежения и отдаления камеры
+    private float zoomSpeed = 1000.0f; //скорость приблежения и отдаления камеры
 
     private float mult = 1f; //ускорение
 
@@ -38,7 +38,7 @@ public class CameraControled : MonoBehaviour
         //ограничение на слишком сильное удаление или приближение камеры по координате y
         transform.position = new Vector3(
             transform.position.x,
-            Mathf.Clamp(transform.position.y, -25f, 150f),
+            Mathf.Clamp(transform.position.y, 5f, 20f),
             transform.position.z);
     }
 
