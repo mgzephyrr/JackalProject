@@ -7,7 +7,6 @@ public class CameraControled : MonoBehaviour
     public float rotateSpeed = 0.1f; //скорость, с которой вращается камера
     public float speed = 5.0f; //скорость движения камеры
     public float zoomSpeed = 100.0f; //скорость приближения и отдаления
-
     private float mult = 1f; //ускорение
 
     //для поворота камеры мышкой
@@ -26,6 +25,7 @@ public class CameraControled : MonoBehaviour
     private float _rotationX = 0;
 
     private int rotateCount = 0;
+    private float timer = 0; //таймер
     //координаты 4 начальных позиций
     private Vector3[] startedCoords = { new Vector3(48.5f, 10f, 44f), new Vector3(39f, 10f, 54f), new Vector3(48.5f, 10f, 63f), new Vector3(58f, 10f, 53f) };
 
@@ -43,6 +43,11 @@ public class CameraControled : MonoBehaviour
             if (rotateCount == 4) rotateCount = 0;
             transform.Rotate(new Vector3(0, 90, 0), Space.World);
             transform.position = startedCoords[rotateCount % 4];
+            timer = 0;
+            while (timer < 300000)
+            {
+                timer += Time.deltaTime;
+            }
         }
         else if (Input.GetKey(KeyCode.E)) //если нажата клавиша Q, то камера вращается против часовой стрелки
         {
@@ -50,6 +55,11 @@ public class CameraControled : MonoBehaviour
             if (rotateCount == -1) rotateCount = 3;
             transform.Rotate(new Vector3(0, -90, 0), Space.World);
             transform.position = startedCoords[rotateCount % 4];
+            timer = 0;
+            while (timer < 300000)
+            {
+                timer += Time.deltaTime;
+            }
         }    
         //изменение поворота камеры по координате y
         transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * rotate * mult, Space.World);
