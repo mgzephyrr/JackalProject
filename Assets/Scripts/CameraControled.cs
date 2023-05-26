@@ -27,7 +27,7 @@ public class CameraControled : MonoBehaviour
 
     private int rotateCount = 0;
     //координаты 4 начальных позиций
-    private Vector3[] startedCoords = { new Vector3(48.5f, 10f, 44f), new Vector3(39f, 10f, 54f), new Vector3(48.5f, 10f, 63f), new Vector3(58f, 10f, 53f) };
+    private Vector3[] startedCoords = { new Vector3(48.5f, 13.3f, 46f), new Vector3(41f, 13.3f, 53.5f), new Vector3(48.5f, 13.3f, 61f), new Vector3(56f, 13.3f, 53.5f) };
 
     private void Update()
     {
@@ -36,7 +36,13 @@ public class CameraControled : MonoBehaviour
         float vertical = Input.GetAxis("Vertical"); 
 
         float rotate = 0f; //показывает в какую сторону поворачивает камера
-        if (Input.GetKey(KeyCode.Q)) //если нажата клавиша Q, то камера вращается по часовой стрелке
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Application.OpenURL("userguide\\camera_controller.htm");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)) //если нажата клавиша Q, то камера вращается по часовой стрелке
         //rotate = -1f;
         {
             rotateCount++;
@@ -44,7 +50,7 @@ public class CameraControled : MonoBehaviour
             transform.Rotate(new Vector3(0, 90, 0), Space.World);
             transform.position = startedCoords[rotateCount % 4];
         }
-        else if (Input.GetKey(KeyCode.E)) //если нажата клавиша Q, то камера вращается против часовой стрелки
+        else if (Input.GetKeyDown(KeyCode.E)) //если нажата клавиша Q, то камера вращается против часовой стрелки
         {
             rotateCount--;
             if (rotateCount == -1) rotateCount = 3;
