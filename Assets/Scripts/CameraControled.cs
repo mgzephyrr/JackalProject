@@ -31,77 +31,80 @@ public class CameraControled : MonoBehaviour
 
     private void Update()
     {
-        //переменные нужны дл€ движени€
-        float horizont = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical"); 
-
-        float rotate = 0f; //показывает в какую сторону поворачивает камера
-
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (!PauseScript.isPaused) //все происходит только если не нажата пауза
         {
-            Application.OpenURL("userguide\\camera_controller.htm");
-        }
+            //переменные нужны дл€ движени€
+            float horizont = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Q)) //если нажата клавиша Q, то камера вращаетс€ по часовой стрелке
-        //rotate = -1f;
-        {
-            rotateCount++;
-            if (rotateCount == 4) rotateCount = 0;
-            transform.Rotate(new Vector3(0, 90, 0), Space.World);
-            transform.position = startedCoords[rotateCount % 4];
-        }
-        else if (Input.GetKeyDown(KeyCode.E)) //если нажата клавиша Q, то камера вращаетс€ против часовой стрелки
-        {
-            rotateCount--;
-            if (rotateCount == -1) rotateCount = 3;
-            transform.Rotate(new Vector3(0, -90, 0), Space.World);
-            transform.position = startedCoords[rotateCount % 4];
-        }    
-        //изменение поворота камеры по координате y
-        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * rotate * mult, Space.World);
+            float rotate = 0f; //показывает в какую сторону поворачивает камера
 
-        //ускорение камеры по нажатым Shift
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-            mult = 3f;
-        else mult = 1f;
-
-        //движение камеры
-        transform.Translate(new Vector3(horizont, vertical, vertical) * Time.deltaTime * mult * speed, Space.Self);
-
-        //зум по колесику мыши
-        //transform.position += transform.up * speed * Time.deltaTime * mult * Input.GetAxis("Mouse ScrollWheel");
-        transform.Translate(new Vector3(0, 0, Input.GetAxis("Mouse ScrollWheel")) * Time.deltaTime * mult * zoomSpeed, Space.Self);
-
-        //ограничение на слишком сильное удаление или приближение камеры по координате y
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, 35f, 60f),
-            Mathf.Clamp(transform.position.y, 3f, 12f),
-            Mathf.Clamp(transform.position.z, 42f, 65f)
-            );
-
-        //движение камеры по зажатой Ћ ћ
-        if (Input.GetMouseButton(0)) //Ћ ћ - 0, ѕ ћ - 1
-        {
-            if (axes == RotationAxes.MouseX)
+            if (Input.GetKeyDown(KeyCode.F1))
             {
-                transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
+                Application.OpenURL("userguide\\camera_controller.htm");
             }
-            else if (axes == RotationAxes.MouseY)
+
+            if (Input.GetKeyDown(KeyCode.Q)) //если нажата клавиша Q, то камера вращаетс€ по часовой стрелке
+                                             //rotate = -1f;
             {
-                _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
-                _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
-                float rotationY = transform.localEulerAngles.y;
-                transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+                rotateCount++;
+                if (rotateCount == 4) rotateCount = 0;
+                transform.Rotate(new Vector3(0, 90, 0), Space.World);
+                transform.position = startedCoords[rotateCount % 4];
             }
-            else
+            else if (Input.GetKeyDown(KeyCode.E)) //если нажата клавиша Q, то камера вращаетс€ против часовой стрелки
             {
-                _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
-                _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
-                float delta = Input.GetAxis("Mouse X") * sensitivityHor;
-                float rotationY = transform.localEulerAngles.y + delta;
-                transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+                rotateCount--;
+                if (rotateCount == -1) rotateCount = 3;
+                transform.Rotate(new Vector3(0, -90, 0), Space.World);
+                transform.position = startedCoords[rotateCount % 4];
+            }
+            //изменение поворота камеры по координате y
+            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * rotate * mult, Space.World);
+
+            //ускорение камеры по нажатым Shift
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                mult = 3f;
+            else mult = 1f;
+
+            //движение камеры
+            transform.Translate(new Vector3(horizont, vertical, vertical) * Time.deltaTime * mult * speed, Space.Self);
+
+            //зум по колесику мыши
+            //transform.position += transform.up * speed * Time.deltaTime * mult * Input.GetAxis("Mouse ScrollWheel");
+            transform.Translate(new Vector3(0, 0, Input.GetAxis("Mouse ScrollWheel")) * Time.deltaTime * mult * zoomSpeed, Space.Self);
+
+            //ограничение на слишком сильное удаление или приближение камеры по координате y
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, 35f, 60f),
+                Mathf.Clamp(transform.position.y, 3f, 12f),
+                Mathf.Clamp(transform.position.z, 42f, 65f)
+                );
+
+            //движение камеры по зажатой Ћ ћ
+            if (Input.GetMouseButton(0)) //Ћ ћ - 0, ѕ ћ - 1
+            {
+                if (axes == RotationAxes.MouseX)
+                {
+                    transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
+                }
+                else if (axes == RotationAxes.MouseY)
+                {
+                    _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
+                    _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
+                    float rotationY = transform.localEulerAngles.y;
+                    transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+                }
+                else
+                {
+                    _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
+                    _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
+                    float delta = Input.GetAxis("Mouse X") * sensitivityHor;
+                    float rotationY = transform.localEulerAngles.y + delta;
+                    transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+                }
             }
         }
+        
     }
-
 }
