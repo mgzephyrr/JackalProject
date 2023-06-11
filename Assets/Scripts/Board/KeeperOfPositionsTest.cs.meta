@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 27bd7a36e5ec85b47ad0ef44c77d5ae3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _prefabForWhite: {instanceID: 0}
+  - _prefabForRed: {instanceID: 0}
+  - _prefabForBlack: {instanceID: 0}
+  - _prefabForBlue: {instanceID: 0}
+  - _parent: {instanceID: 0}
+  - _board: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

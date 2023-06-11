@@ -3,15 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Assets.Scripts.Utilities
 {
     public class SpecBoard : MonoBehaviour
     {
-        public float SizeCellZ => SizeZ / 8;
-        public float SizeCellX => SizeX / 8;
+        public int NumberCellsX => _numberCellsX;
+        public int NumberCellsZ => _numberCellsZ;
+        public float SizeCellZ => SizeZ / _numberCellsX;
+        public float SizeCellX => SizeX / _numberCellsZ;
         public float SizeX => Vector3.Distance(_leftUp, _leftBottom);
-        public float SizeZ => Vector3.Distance(_rightUp, _leftBottom);
+        public float SizeZ => Vector3.Distance(_rightUp, _leftUp);
+
+        [SerializeField, Range(0,14)] private int _numberCellsX;
+
+        [SerializeField, Range(0,14)] private int _numberCellsZ;
 
         private Vector3 _leftUp;
         private Vector3 _rightUp;
@@ -22,21 +29,18 @@ namespace Assets.Scripts.Utilities
         {
             _renderer = GetComponent<Renderer>();
             Bounds bounds = _renderer.bounds;
-            print(bounds);
-            _leftUp = bounds.ClosestPoint(new Vector3(Mathf.Infinity, 0, Mathf.Infinity));
-            _rightUp = bounds.ClosestPoint(new Vector3(Mathf.Infinity, 0, -Mathf.Infinity));
-            _leftBottom = bounds.ClosestPoint(new Vector3(-Mathf.Infinity, 0, Mathf.Infinity));
-            _rightBottom = bounds.ClosestPoint(new Vector3(-Mathf.Infinity, 0, -Mathf.Infinity));
+            _leftUp =  new Vector3(0, 2.5f, 13);
+            _rightUp = new Vector3(13, 2.5f, 13);
+            _leftBottom = new Vector3(0, 2.5f, 0);
+            _rightBottom =  new Vector3(13, 2.5f, 0);
         }
         private void OnDrawGizmos()
         {
             Gizmos.color = UnityEngine.Color.red;
-            Gizmos.DrawSphere(_leftUp, 1f);
-            Gizmos.DrawSphere(_rightUp, 0.25f);
+            Gizmos.DrawSphere(_leftUp, 0.5f);
+            Gizmos.DrawSphere(_rightUp, 0.75f);
             Gizmos.DrawSphere(_leftBottom, 0.25f);
-            Gizmos.DrawSphere(_rightBottom, 0.25f);
-            Gizmos.DrawSphere(new Vector3(43.5f, 2.5f, 53.5f), 1f);
-
+            Gizmos.DrawSphere(_rightBottom, 1f);
         }
     }
 }

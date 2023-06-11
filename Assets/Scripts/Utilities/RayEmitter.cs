@@ -23,8 +23,7 @@ namespace Assets.Scripts.Utilities
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 _pointHit = hit.point;
-                print($"{_pointHit}");
-                print($"{Mathf.Round(_pointHit.z/_board.SizeCellZ)} {Mathf.Round(_pointHit.x/_board.SizeCellX)}");
+                print(Mathf.Round(_pointHit.z/_board.SizeCellZ)+" "+Mathf.Round(_pointHit.x/_board.SizeCellX));
             }
             
         }

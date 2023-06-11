@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Figures
 {
-    internal interface IFigure
+    public interface IFigure
     {
         public void Destroy(IDestruction destruction);
         public void Move(IMovement movement);
