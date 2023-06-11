@@ -27,7 +27,7 @@ public class CameraControled : MonoBehaviour
 
     private int rotateCount = 0;
     //координаты 4 начальных позиций
-    private Vector3[] startedCoords = { new Vector3(48.5f, 14.4f, 46.3f), new Vector3(41f, 14.4f, 53.5f), new Vector3(48.5f, 14.4f, 61f), new Vector3(56f, 14.4f, 53.5f) };
+    private Vector3[] startedCoords = { new Vector3(6.5f, 11.3f, 0.5f) , new Vector3(0.5f, 11.3f, 6.5f), new Vector3(6.5f, 11.3f, 12.5f), new Vector3(12.5f, 11.3f, 6.5f) };
 
     private void Update()
     {
@@ -76,9 +76,9 @@ public class CameraControled : MonoBehaviour
 
             //ограничение на слишком сильное удаление или приближение камеры по координате y
             transform.position = new Vector3(
-                Mathf.Clamp(transform.position.x, 35f, 60f),
-                Mathf.Clamp(transform.position.y, 3f, 15f),
-                Mathf.Clamp(transform.position.z, 42f, 65f)
+                Mathf.Clamp(transform.position.x, -20f, 20f),
+                Mathf.Clamp(transform.position.y, 3f, 12f),
+                Mathf.Clamp(transform.position.z, -20f, 20f)
                 );
 
             //движение камеры по зажатой Ћ ћ
