@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Imports/Stylized Pirate Ship.meta
+guid: 1ad67f173e4d07b42ac802871132e4c9
+========
 guid: 651706997cd87c640888973b61e728e8
+>>>>>>>> remotes/origin/devKirill:Assets/Imports/SyntyStudios/PolygonCity/Models/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
