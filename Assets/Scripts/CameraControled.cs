@@ -81,8 +81,8 @@ public class CameraControled : MonoBehaviour
                 Mathf.Clamp(transform.position.z, -20f, 20f)
                 );
 
-            //движение камеры по зажатой ЛКМ
-            if (Input.GetMouseButton(0)) //ЛКМ - 0, ПКМ - 1
+            //движение камеры по зажатой ПКМ
+            if (Input.GetMouseButton(1)) //ЛКМ - 0, ПКМ - 1
             {
                 if (axes == RotationAxes.MouseX)
                 {
