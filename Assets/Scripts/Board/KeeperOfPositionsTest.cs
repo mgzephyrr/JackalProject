@@ -13,7 +13,9 @@ namespace Assets.Scripts.Board
 {
     public class KeeperOfPositionsTest : MonoBehaviour, IPositionKeeper
     {
-        public ICreator[,] Creators { get; private set; }
+        //public KeeperOfFigures Keeper => _keeper;
+        //public ICreator[,] Creators { get; private set; }
+        public IFigure[,] Figures { get; private set; }
         [SerializeField] private GameObject _prefabForWhite;
         [SerializeField] private GameObject _prefabForRed;
         [SerializeField] private GameObject _prefabForBlack;
@@ -21,10 +23,11 @@ namespace Assets.Scripts.Board
         [SerializeField] private Transform _parent;        
         [SerializeField] private SpecBoard _board;
 
-        private CreatorFiguresOnBoard _creator;
+        //private KeeperOfFigures _keeper;
+
         public void Awake() 
         {
-            Creators = new ICreator[,]
+            ICreator[,] creators =
             {
                 { //0x
                     new CreatorEmptyCell(),
@@ -223,8 +226,18 @@ namespace Assets.Scripts.Board
                     new CreatorEmptyCell()
                 },
             };
-            _creator = new CreatorFiguresOnBoard(_board, this);
+            CreateFigures(creators);
         }
-
+        private void CreateFigures(ICreator[,] creators)
+        {
+            Figures = new IFigure[_board.NumberCellsX, _board.NumberCellsZ];
+            for (int z = 0; z < _board.NumberCellsZ; z++)
+            {
+                for (int x = 0; x < _board.NumberCellsX; x++)
+                {
+                    Figures[x, z] = creators[x, z].Create(new Vector3(x, 0, z), Quaternion.identity);
+                }
+            }
+        }
     }
 }
