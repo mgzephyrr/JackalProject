@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5861434, g: 0.6329232, b: 0.74919, a: 1}
+  m_IndirectSpecularColor: {r: 0.5861434, g: 0.63292325, b: 0.74919003, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3736,56 +3736,6 @@ Transform:
   m_GameObject: {fileID: 2045120667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 2.5, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2125374277
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2125374279}
-  - component: {fileID: 2125374278}
-  m_Layer: 0
-  m_Name: CreatorTestFigures
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2125374278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125374277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27bd7a36e5ec85b47ad0ef44c77d5ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabForWhite: {fileID: 8629511640210919235, guid: 01344ce3117069f4183415732ceed55f, type: 3}
-  _prefabForRed: {fileID: 5015092282081232651, guid: 1e533bba1736db44b8182f2f9cd69156, type: 3}
-  _prefabForBlack: {fileID: 3133397816612346890, guid: 1bdc099b60b69034e80c88ecfeb31129, type: 3}
-  _prefabForBlue: {fileID: 8026384328780131174, guid: 9780857badb40924bbec8b645f7534fd, type: 3}
-  _parent: {fileID: 2045120668}
-  _board: {fileID: 0}
---- !u!4 &2125374279
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125374277}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 3.0317392, z: 6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
