@@ -68,7 +68,6 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
             }
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Надав");
                 if (gamePieces[hitPosition.x, hitPosition.y] != null)
                 {
                     if (true)
@@ -85,7 +84,11 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
                 bool validMove = MoveTo(currentlyDragging, hitPosition.x, hitPosition.y);
                 if (!validMove)
                 {
-                    currentlyDragging.transform.position = GetTileCenter(previousPosition.x, previousPosition.y);
+                    currentlyDragging.SetPosition(GetTileCenter(previousPosition.x, previousPosition.y));
+                    currentlyDragging = null;
+                }
+                else
+                {
                     currentlyDragging = null;
                 }
             }
@@ -95,6 +98,12 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
                 {
                     tiles[currentHover.x, currentHover.y].layer = LayerMask.NameToLayer("Tile");
                     currentHover = -Vector2Int.one;
+                }
+
+                if (currentlyDragging && Input.GetMouseButtonUp(0))
+                {
+                    currentlyDragging.SetPosition(GetTileCenter(currentlyDragging.currentX, currentlyDragging.currentY));
+                    currentlyDragging = null;
                 }
             }
         }
@@ -160,26 +169,25 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         int whiteTeam = 0, blackTeam = 2, redTeam = 1, blueTeam = 3;
 
         //WhiteTeam
-        gamePieces[5, 0] = SpawnPiece(GamePieceType.Pirate, 0);
-        gamePieces[6, 0] = SpawnPiece(GamePieceType.Pirate, 0);
-        gamePieces[7, 0] = SpawnPiece(GamePieceType.Pirate, 0);
+        gamePieces[5, 0] = SpawnPiece(GamePieceType.Pirate, whiteTeam);
+        gamePieces[6, 0] = SpawnPiece(GamePieceType.Pirate, whiteTeam);
+        gamePieces[7, 0] = SpawnPiece(GamePieceType.Pirate, whiteTeam);
 
         //RedTeam
-        gamePieces[0, 5] = SpawnPiece(GamePieceType.Pirate, 1);
-        gamePieces[0, 6] = SpawnPiece(GamePieceType.Pirate, 1);
-        gamePieces[0, 7] = SpawnPiece(GamePieceType.Pirate, 1);
+        gamePieces[0, 5] = SpawnPiece(GamePieceType.Pirate, redTeam);
+        gamePieces[0, 6] = SpawnPiece(GamePieceType.Pirate, redTeam);
+        gamePieces[0, 7] = SpawnPiece(GamePieceType.Pirate, redTeam);
 
         //BlackTeam
-        gamePieces[5, 12] = SpawnPiece(GamePieceType.Pirate, 2);
-        gamePieces[6, 12] = SpawnPiece(GamePieceType.Pirate, 2);
-        gamePieces[7, 12] = SpawnPiece(GamePieceType.Pirate, 2);
+        gamePieces[5, 12] = SpawnPiece(GamePieceType.Pirate, blackTeam);
+        gamePieces[6, 12] = SpawnPiece(GamePieceType.Pirate, blackTeam);
+        gamePieces[7, 12] = SpawnPiece(GamePieceType.Pirate, blackTeam);
 
         //BlueTeam
-        gamePieces[12, 5] = SpawnPiece(GamePieceType.Pirate, 3);
-        gamePieces[12, 6] = SpawnPiece(GamePieceType.Pirate, 3);
-        gamePieces[12, 7] = SpawnPiece(GamePieceType.Pirate, 3);
+        gamePieces[12, 5] = SpawnPiece(GamePieceType.Pirate, blueTeam);
+        gamePieces[12, 6] = SpawnPiece(GamePieceType.Pirate, blueTeam);
+        gamePieces[12, 7] = SpawnPiece(GamePieceType.Pirate, blueTeam);
     }
-
     private GamePiece SpawnPiece(GamePieceType type, int team)
     {
         GamePiece gp = Instantiate(prefabs[(int)type - 1], transform).GetComponent<GamePiece>();
@@ -200,14 +208,12 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
                     PositionSinglePiece(x, y, true);
 
     }
-
     private void PositionSinglePiece(int x, int y, bool force = false)
     {
         gamePieces[x, y].currentX = x;
         gamePieces[x, y].currentY = y;
-        gamePieces[x, y].transform.position = GetTileCenter(x,y);
+        gamePieces[x, y].SetPosition(GetTileCenter(x,y), force);
     }
-
     private Vector3 GetTileCenter(int x, int y)
     {
         return new Vector3(x * tileSize, yOffset, y * tileSize) - bounds + new Vector3(tileSize/2, 0 , tileSize/2);
@@ -216,12 +222,97 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     private bool MoveTo(GamePiece gp, int x, int y)
     {
         Vector2Int previousPosition = new Vector2Int(gp.currentX, gp.currentY);
+        if (gamePieces[x, y] != null)
+        {
+            GamePiece ogp = gamePieces[x, y];
 
+            if (gp.team == ogp.team)
+                return false;
+            else
+                RevivePiece(ogp);
+
+        }
         gamePieces[x,y] = gp;
         gamePieces[previousPosition.x, previousPosition.y] = null;
 
         PositionSinglePiece(x, y);
         return true;
+    }
+
+    private void RevivePiece(GamePiece ogp)
+    {
+        if (ogp.team == 0)
+        {
+            if (gamePieces[6, 0] is null)
+            {
+                MoveTo(ogp, 6, 0);
+                return;
+            }
+            if (gamePieces[5, 0] is null)
+            {
+                MoveTo(ogp, 5, 0);
+                return;
+            }
+            if (gamePieces[7, 0] is null)
+            {
+                MoveTo(ogp, 7, 0);
+                return;
+            }
+        }
+        if (ogp.team == 1)
+        {
+            if (gamePieces[0, 6] is null)
+            {
+                MoveTo(ogp, 0, 6);
+                return;
+            }
+            if (gamePieces[0, 5] is null)
+            {
+                MoveTo(ogp, 0, 5);
+                return;
+            }
+            if (gamePieces[0, 7] is null)
+            {
+                MoveTo(ogp, 0, 7);
+                return;
+            }
+        }
+        if (ogp.team == 2)
+        {
+            if (gamePieces[6, 12] is null)
+            {
+                MoveTo(ogp, 6, 12);
+                return;
+            }
+            if (gamePieces[5, 12] is null)
+            {
+                MoveTo(ogp, 5, 12);
+                return;
+            }
+            if (gamePieces[7, 12] is null)
+            {
+                MoveTo(ogp, 7, 12);
+                return;
+            }
+        }
+        if (ogp.team == 3)
+        {
+            if (gamePieces[12, 6] is null)
+            {
+                MoveTo(ogp, 12, 6);
+                return;
+            }
+            if (gamePieces[12, 5] is null)
+            {
+                MoveTo(ogp, 12, 5);
+                return;
+            }
+            if (gamePieces[12, 7] is null)
+            {
+                MoveTo(ogp, 12, 7);
+                return;
+            }
+        }
     }
     private Vector2Int LookupTileIndex(GameObject hitInfo)
     {
