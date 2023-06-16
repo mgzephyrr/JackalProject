@@ -960,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3182955050100237784}
-  - component: {fileID: 3431874811014411342}
+  - component: {fileID: 7963388084515718052}
   m_Layer: 0
   m_Name: Highlighter
   m_TagString: Untagged
@@ -983,7 +983,7 @@ Transform:
   m_Father: {fileID: 8135858108849988837}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3431874811014411342
+--- !u!114 &7963388084515718052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e23ddaf0b24c094689a71d60fdda7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileMaterial: {fileID: 2100000, guid: 6da684c1c12f7a14cb057d5506e53148, type: 2}
+  tileMaterial: {fileID: 0}
   tileSize: 1
   yOffset: 1
   boardCenter: {x: -6, y: 0, z: -6}
