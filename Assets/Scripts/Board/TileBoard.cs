@@ -17,7 +17,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     [SerializeField] private Vector3 boardCenter = Vector3.zero;
 
     [Header("Prefabs && Materials")]
-    [SerializeField] private GameObject[] prefabs;
+    [SerializeField] public GameObject[] prefabs;
     [SerializeField] private Material[] teamMaterials;
 
     // LOGIC
@@ -391,4 +391,5 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
         return -Vector2Int.one; // Invalid
     }
+
 }
