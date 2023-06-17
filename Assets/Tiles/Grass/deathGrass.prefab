@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7050696540204832633}
   - component: {fileID: 97953574298928235}
   - component: {fileID: 7617961294925589246}
+  - component: {fileID: -1303644446037273114}
+  - component: {fileID: 8842818857000021522}
   m_Layer: 0
   m_Name: deathGrass
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6103664986243312922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.140564, y: 7.250704, z: -29.124418}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,3 +99,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1303644446037273114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103664986243312922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea03fc0aaa542114d9149c9d6ca1acba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3481639990792289037, guid: ebb7fe7d7e430ac4d870e81d3c1ee610, type: 3}
+--- !u!114 &8842818857000021522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103664986243312922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58a4797825f48b4694f53d17fa523cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  death: {fileID: 21300000, guid: f7ec423196994624ab8fb9632c05ce08, type: 3}

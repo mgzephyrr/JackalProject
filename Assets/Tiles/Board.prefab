@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &587095332108264442
 Transform:
   m_ObjectHideFlags: 0
@@ -998,7 +998,11 @@ MonoBehaviour:
   tileMaterial: {fileID: 0}
   tileSize: 1
   yOffset: 1
+  dragOffset: 1.5
   boardCenter: {x: -6, y: 0, z: -6}
+  prefabs: []
+  teamMaterials: []
+  turn: 0
 --- !u!1001 &14331541256792622
 PrefabInstance:
   m_ObjectHideFlags: 0
