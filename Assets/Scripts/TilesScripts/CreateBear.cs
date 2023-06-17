@@ -7,9 +7,12 @@ public class CreateBear : MonoBehaviour
     [SerializeField] private GameObject prefab;
     private Vector3 localPosition;
     private bool isCreated = false;
+    private GameObject temp;
     private void Start()
     {
         localPosition = gameObject.transform.position;
+        Debug.Log($"{localPosition.x} {localPosition.z}");
+        temp = GameObject.Find("Highlighter");
     }
     void Update()
     {
@@ -18,13 +21,13 @@ public class CreateBear : MonoBehaviour
     }
     public void SpawnBear()
     {
-        if (TileBoard.gamePieces[(int)(localPosition.x - 0.5), (int)(localPosition.z - 0.5)] != null && !isCreated)
+        GamePiece obj = TileBoard.gamePieces[(int)(localPosition.x - 0.5), (int)(localPosition.z - 0.5)];
+        if (obj != null && !isCreated)
         {
-            GamePiece bear = Instantiate(prefab, transform).GetComponent<GamePiece>();
-            Debug.Log(bear);
-            bear.type = GamePieceType.Bear;
-            Destroy(TileBoard.gamePieces[(int)(localPosition.x - 0.5), (int)(localPosition.z - 0.5)]);//TileBoard.gamePieces[(int)(localPosition.x - 0.5), (int)(localPosition.z - 0.5)] = null;
-            TileBoard.gamePieces[(int)(localPosition.x - 0.5), (int)(localPosition.z - 0.5)] = bear;
+            obj.PieceDestroy();
+            Debug.Log($"{Instantiate(prefab, temp.transform).GetComponent<GamePiece>()}");
+            Debug.Log($"{Instantiate(prefab, temp.transform)}");
+            TileBoard.gamePieces[(int)(localPosition.x - 0.5), (int)(localPosition.z - 0.5)] = Instantiate(prefab, temp.transform).GetComponent<GamePiece>();
             isCreated = true;
         }       
     }

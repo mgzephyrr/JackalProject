@@ -47,4 +47,9 @@ public class GamePiece : MonoBehaviour
             transform.localScale = desiredScale;
         }
     }
+    public void PieceDestroy()
+    {
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
 }
