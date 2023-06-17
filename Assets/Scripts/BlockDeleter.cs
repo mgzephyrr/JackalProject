@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BlockDeleter : MonoBehaviour
 {
-    void OnMouseDown()
+    void Update()
     {
-        Destroy(gameObject);
+        if (TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)] != null)
+            Destroy(gameObject);
     }
 }
