@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Pirate : GamePiece
 {
+    public bool isCoin = false;
     public override List<Vector2Int> GetAvailableMoves(ref GamePiece[,] board, int tileCountX, int tileCountY)
     {
         List<Vector2Int> r = new List<Vector2Int>();
