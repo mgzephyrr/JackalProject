@@ -17,7 +17,19 @@ public class GamePiece : MonoBehaviour
     public GamePieceType type;
 
     private Vector3 desiredPosition;
-    private Vector3 desiredScale = new Vector3(0.75f,0.75f,0.75f);
+    private Vector3 desiredScale;
+
+    private void Start()
+    {
+        if (type == GamePieceType.Pirate)
+        {
+            desiredScale = new Vector3(0.75f, 0.75f, 0.75f);
+        }
+        if (type == GamePieceType.Bear) 
+        {
+            desiredScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
+    }
 
     private void Update()
     {

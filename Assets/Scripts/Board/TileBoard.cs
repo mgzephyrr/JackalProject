@@ -22,6 +22,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
     // LOGIC
     private List<Vector2Int> availableMoves =new List<Vector2Int>();
+    private int whiteTeam = 0, blackTeam = 2, redTeam = 1, blueTeam = 3, noneTeam = 4;
     public static GamePiece[,] gamePieces;
     private GamePiece currentlyDragging;
     private const int TILE_COUNT_X = 13;
@@ -182,7 +183,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     {
         gamePieces = new GamePiece[TILE_COUNT_X, TILE_COUNT_Y];
 
-        int whiteTeam = 0, blackTeam = 2, redTeam = 1, blueTeam = 3;
+        
 
         //WhiteTeam
         gamePieces[5, 0] = SpawnPiece(GamePieceType.Pirate, whiteTeam);
@@ -210,7 +211,9 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
         gp.type = type;
         gp.team = team;
-        gp.GetComponent<MeshRenderer>().material = teamMaterials[team];
+        MeshRenderer rend = gp.GetComponent<MeshRenderer>();
+        if (rend != null)
+            gp.GetComponent<MeshRenderer>().material = teamMaterials[team];
 
         return gp;
     }
@@ -392,4 +395,9 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         return -Vector2Int.one; // Invalid
     }
 
+    public void SpawnBear(int x, int y)
+    {
+        gamePieces[x, y] = SpawnPiece(GamePieceType.Bear, noneTeam);
+        PositionSinglePiece(x, y, true);
+    }
 }
