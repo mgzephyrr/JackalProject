@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Imports/SyntyStudios/PolygonStarter/PolygonPrototype/URP_ExtractMe.unitypackage.meta
+guid: 35e2ac7db1165da40aad559f01021327
+========
 guid: 79507e04b0c891341ba495606d184dba
 folderAsset: yes
+>>>>>>>> remotes/origin/ВеткаНикиты:Assets/Prefabs.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
