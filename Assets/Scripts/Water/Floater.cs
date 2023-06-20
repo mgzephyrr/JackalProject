@@ -16,18 +16,14 @@ public class Floater : MonoBehaviour
         rigidbody.AddForceAtPosition(Physics.gravity / floaterCount, transform.position, ForceMode.Acceleration);
 
         float waveHeight = WaveManager.instance.GetWaveHeight(transform.position.x) + WaveManager.instance.transform.position.y;
-        //float waveHeightZ = WaveManager.instance.GetWaveHeight(transform.position.z) + WaveManager.instance.transform.position.y;
+
         if (transform.position.y < waveHeight)
         {
             float displacementMultiplier = Mathf.Clamp01((waveHeight-transform.position.y) / depthBeforeSubmerged) * displacementAmount;
-            //float displacementMultiplierZ = Mathf.Clamp01((waveHeightZ - transform.position.y) / depthBeforeSubmerged) * displacementAmount;
 
             rigidbody.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), transform.position, ForceMode.Acceleration);
             rigidbody.AddForce(displacementMultiplier * -rigidbody.velocity * waterDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
             rigidbody.AddTorque(displacementMultiplier * -rigidbody.angularVelocity * waterAngularDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
-
-            //rigidbody.AddForce(displacementMultiplierZ * -rigidbody.velocity * waterDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
-            //rigidbody.AddTorque(displacementMultiplierZ * -rigidbody.angularVelocity * waterAngularDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
         }
     }
 }

@@ -34,13 +34,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _GradientNoise: 2
+    - _GradientNoise: 5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RipleSlimness: 10
     - _RippleDensity: 180
+    - _RippleSlimness: 12
     - _RippleSpeed: 1
-    - _WaveHeight: 0.1
+    - _WaveHeight: 0.14
     - _WaveSpeed: 0.08
     m_Colors:
     - _BaseColor: {r: 0.31933072, g: 0.54205227, b: 0.9811321, a: 0}

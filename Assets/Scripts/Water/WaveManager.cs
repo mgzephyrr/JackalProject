@@ -27,6 +27,8 @@ public class WaveManager : MonoBehaviour
     private void Update()
     {
         offset += Time.deltaTime * speed;
+        if (offset > 10000)
+            offset -= 10000f;
     }
 
     public float GetWaveHeight(float _x)
