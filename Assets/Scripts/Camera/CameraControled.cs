@@ -41,7 +41,7 @@ public class CameraControled : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F1))
             {
-                Application.OpenURL("userguide\\camera_controller.htm");
+                Application.OpenURL("userguide\\pravila_igry.htm");
             }
 
             if (Input.GetKeyDown(KeyCode.Q)) //если нажата клавиша Q, то камера вращается по часовой стрелке
