@@ -22,7 +22,6 @@ public class CoinToShip : MonoBehaviour
     }
     void ChangeCoin()
     {
-        team = pirate.team;
         string name = "";
         switch (team)
         {

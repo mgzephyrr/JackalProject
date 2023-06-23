@@ -4,6 +4,41 @@ using UnityEngine;
 public class Pirate : GamePiece
 {
     public bool isCoin = false;
+
+    //public override List<Vector2Int> MoveHorse(ref GamePiece[,] board, int tileCountX, int tileCountY)
+    //{
+    //    List<Vector2Int> locations = new List<Vector2Int>();
+
+    //    locations.Add(new Vector2Int(tileCountX - 1, tileCountY + 2));
+    //    locations.Add(new Vector2Int(tileCountX + 1, tileCountY + 2));
+
+    //    locations.Add(new Vector2Int(tileCountX + 2, tileCountY + 1));
+    //    locations.Add(new Vector2Int(tileCountX - 2, tileCountY + 1));
+
+    //    locations.Add(new Vector2Int(tileCountX + 2, tileCountY - 1));
+    //    locations.Add(new Vector2Int(tileCountX - 2, tileCountY - 1));
+
+    //    locations.Add(new Vector2Int(tileCountX + 1, tileCountY - 2));
+    //    locations.Add(new Vector2Int(tileCountX - 1, tileCountY - 2));
+
+    //    if (board[currentX - 1, currentY + 2] == null)
+    //        locations.Add(new Vector2Int(currentX - 1, currentY + 2));
+    //    else if (board[currentX - 1, currentY + 2].team != team)
+    //        locations.Add(new Vector2Int(currentX - 1, currentY + 2));
+
+    //    string type = "ffkfkfk";
+
+    //    if (type == "RightGrass")
+    //    {
+    //        if (board[currentX + 1, currentY] == null)
+    //            locations.Add(new Vector2Int(currentX + 1, currentY));
+    //        else if (board[currentX + 1, currentY].team != team)
+    //            locations.Add(new Vector2Int(currentX + 1, currentY));
+    //    }
+        
+
+    //    return locations;
+    //}
     public override List<Vector2Int> GetAvailableMoves(ref GamePiece[,] board, int tileCountX, int tileCountY)
     {
         List<Vector2Int> r = new List<Vector2Int>();

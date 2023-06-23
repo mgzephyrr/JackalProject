@@ -12,7 +12,7 @@ public class deathGrass : MonoBehaviour
     private int numbersBlue = 3;
     private int numbersBlack = 3;
 
-    [SerializeField] public GameObject prefab;
+    //[SerializeField] public GameObject prefab;
     [SerializeField] public TileBoard board;
     private bool isCreated = false;
     private GamePiece piece;
