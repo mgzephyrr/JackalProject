@@ -1184,10 +1184,10 @@ InputSync.prototype ={
 DR_EXPLAIN.namespace( 'DR_EXPLAIN.data_menu' );
 DR_EXPLAIN.data_menu = {
     // menu
-    DREX_NODE_NAMES: ["Home page","Features overview","Getting started","User interface","Troubleshooting FAQ","Frequently asked questions (FAQ)","Contact information","Software history","System requirements","Installation","Start","The main window of the program","Program settings","Playing mode","Working with game","Shortcut key","Main menu","Modify inventory","Make a move","Kill pirate","Search the map","Take the coin","Bring the coin to the ship","Camera Controller"],
-    DREX_NODE_LINKS: ["index.htm","overview.htm","getting_started.htm","user_interface.htm","troubleshooting.htm","faq.htm","contact.htm","release_notes.htm","system_requirements.htm","setup.htm","launch.htm","main_window.htm","settings.htm","modes.htm","working_with_game.htm","hotkeys.htm","main_menu.htm","modify_inventory.htm","make_a_move.htm","kill_pirate.htm","search_the_map.htm","take_the_coin.htm","bring_the_coin_to_the_ship.htm","camera_controller.htm"],
-    DREX_NODE_CHILD_START: [1,7,9,11,16,16,16,16,16,16,16,16,16,16,16,24,24,24,24,24,24,24,24,24],
-    DREX_NODE_CHILD_END: [7,9,11,16,16,16,16,16,16,16,16,16,16,16,24,24,24,24,24,24,24,24,24,24],
+    DREX_NODE_NAMES: ["Начальная страница","Обзор возможностей программы","Начало работы","Пользовательский интерфейс","Частые вопросы (FAQ)","Контактная информация","История версий","Системные требования","Основные понятия и термины","Установка","Запуск","Состав игры","Правила игры","Значение клеток поля","Главное окно программы","Настройки программы","Работа с приложением","Горячие клавиши","Создание игры","Открытие клеток","Совершение хода","Убийство пирата","Поднятие и опускание монеты","Передвижение камеры"],
+    DREX_NODE_LINKS: ["index.htm","overview.htm","getting_started.htm","user_interface.htm","faq.htm","contact.htm","release_notes.htm","system_requirements.htm","concepts.htm","setup.htm","launch.htm","sostav_igry.htm","pravila_igry.htm","znachenie_kletok_polya.htm","main_window.htm","settings.htm","rabota_s_prilozheniem.htm","hotkeys.htm","sozdanie_igry.htm","otkrytie_kletok.htm","sovershenie_khoda.htm","ubijstvo_pirata.htm","podnyatie_i_opuskanie_monety.htm","peredvizhenie_kamery.htm"],
+    DREX_NODE_CHILD_START: [1,6,8,14,18,18,18,18,18,18,18,18,18,18,18,18,18,24,24,24,24,24,24,24],
+    DREX_NODE_CHILD_END: [6,8,14,18,18,18,18,18,18,18,18,18,18,18,18,18,24,24,24,24,24,24,24,24],
     DREX_MENU_TYPE: 2,
     DREX_HAS_ROOT_NODE: 0};
 
@@ -1197,12 +1197,12 @@ DR_EXPLAIN.data_menu = {
 DR_EXPLAIN.namespace( 'DR_EXPLAIN.data_search' );
 DR_EXPLAIN.data_search = {
 
-    DREXPLAIN_NOT_FOUND: "Nothing was found",
-    DREXPLAIN_EMPTY_STRING: "Please, enter a string for search!",
-    DREXPLAIN_IN_PROGRESS: "Searching...",
-    DREXPLAIN_PREVIEW_MODE_SEARCH_IS_DISABLED_NOTICE : "In the preview mode the search is disabled.",
-    DREXPLAIN_ERROR_LOCAL_SEARCH : "Unable to download search index files. Please, upload HTML files to a web server and access them via URL starting with https:// or http:// .",
-    DREXPLAIN_ERROR_REMOTE_SEARCH : "Unable to download search index files. Please, ask your web server administrator to enable the downloading of files with .json extension or contact help@drexplain.com. Error code: {0}"
+    DREXPLAIN_NOT_FOUND: "&#x041D;&#x0438;&#x0447;&#x0435;&#x0433;&#x043E; &#x043D;&#x0435; &#x043D;&#x0430;&#x0439;&#x0434;&#x0435;&#x043D;&#x043E;",
+    DREXPLAIN_EMPTY_STRING: "&#x0412;&#x0432;&#x0435;&#x0434;&#x0438;&#x0442;&#x0435; &#x0442;&#x0435;&#x043A;&#x0441;&#x0442; &#x0434;&#x043B;&#x044F; &#x043F;&#x043E;&#x0438;&#x0441;&#x043A;&#x0430;",
+    DREXPLAIN_IN_PROGRESS: "Идет поиск...",
+    DREXPLAIN_PREVIEW_MODE_SEARCH_IS_DISABLED_NOTICE : "&#x041F;&#x043E;&#x0438;&#x0441;&#x043A; &#x043E;&#x0442;&#x043A;&#x043B;&#x044E;&#x0447;&#x0435;&#x043D; &#x0432; &#x0440;&#x0435;&#x0436;&#x0438;&#x043C;&#x0435; &#x043F;&#x0440;&#x0435;&#x0434;&#x043F;&#x0440;&#x043E;&#x0441;&#x043C;&#x043E;&#x0442;&#x0440;&#x0430;.",
+    DREXPLAIN_ERROR_LOCAL_SEARCH : "&#x041D;&#x0435; &#x0443;&#x0434;&#x0430;&#x043B;&#x043E;&#x0441;&#x044C; &#x0437;&#x0430;&#x0433;&#x0440;&#x0443;&#x0437;&#x0438;&#x0442;&#x044C; &#x0438;&#x043D;&#x0434;&#x0435;&#x043A;&#x0441;&#x043D;&#x044B;&#x0435; &#x0444;&#x0430;&#x0439;&#x043B;&#x044B;. &#x041F;&#x043E;&#x0436;&#x0430;&#x043B;&#x0443;&#x0439;&#x0441;&#x0442;&#x0430;, &#x0437;&#x0430;&#x0433;&#x0440;&#x0443;&#x0437;&#x0438;&#x0442;&#x0435; &#x0441;&#x043E;&#x0437;&#x0434;&#x0430;&#x043D;&#x043D;&#x044B;&#x0435; HTML &#x0444;&#x0430;&#x0439;&#x043B;&#x044B; &#x043D;&#x0430; &#x0432;&#x0430;&#x0448; &#x0432;&#x0435;&#x0431;-&#x0441;&#x0435;&#x0440;&#x0432;&#x0435;&#x0440; &#x0438; &#x043E;&#x0442;&#x043A;&#x0440;&#x043E;&#x0439;&#x0442;&#x0435; &#x0438;&#x0445; &#x0432; &#x0431;&#x0440;&#x0430;&#x0443;&#x0437;&#x0435;&#x0440;&#x0435; &#x043F;&#x043E; &#x0430;&#x0434;&#x0440;&#x0435;&#x0441;&#x0443;, &#x043D;&#x0430;&#x0447;&#x0438;&#x043D;&#x0430;&#x044E;&#x0449;&#x0435;&#x043C;&#x0443;&#x0441;&#x044F; &#x0441; https:// &#x0438;&#x043B;&#x0438; http:// .",
+    DREXPLAIN_ERROR_REMOTE_SEARCH : "&#x041D;&#x0435; &#x0443;&#x0434;&#x0430;&#x043B;&#x043E;&#x0441;&#x044C; &#x0437;&#x0430;&#x0433;&#x0440;&#x0443;&#x0437;&#x0438;&#x0442;&#x044C; &#x0438;&#x043D;&#x0434;&#x0435;&#x043A;&#x0441;&#x043D;&#x044B;&#x0435; &#x0444;&#x0430;&#x0439;&#x043B;&#x044B;. &#x041F;&#x043E;&#x0436;&#x0430;&#x043B;&#x0443;&#x0439;&#x0441;&#x0442;&#x0430;, &#x043F;&#x043E;&#x043F;&#x0440;&#x043E;&#x0441;&#x0438;&#x0442;&#x0435; &#x0430;&#x0434;&#x043C;&#x0438;&#x043D;&#x0438;&#x0441;&#x0442;&#x0440;&#x0430;&#x0442;&#x043E;&#x0440;&#x0430; &#x0432;&#x0430;&#x0448;&#x0435;&#x0433;&#x043E; &#x0432;&#x0435;&#x0431;-&#x0441;&#x0435;&#x0440;&#x0432;&#x0435;&#x0440;&#x0430; &#x0440;&#x0430;&#x0437;&#x0440;&#x0435;&#x0448;&#x0438;&#x0442;&#x044C; &#x0441;&#x043A;&#x0430;&#x0447;&#x0438;&#x0432;&#x0430;&#x043D;&#x0438;&#x0435; &#x0444;&#x0430;&#x0439;&#x043B;&#x043E;&#x0432; &#x0441; &#x0440;&#x0430;&#x0441;&#x0448;&#x0438;&#x0440;&#x0435;&#x043D;&#x0438;&#x0435;&#x043C; .json &#x0438;&#x043B;&#x0438; &#x0441;&#x0432;&#x044F;&#x0436;&#x0438;&#x0442;&#x0435;&#x0441;&#x044C; &#x0441; &#x043D;&#x0430;&#x043C;&#x0438; &#x043F;&#x043E; help@drexplain.com. &#x041A;&#x043E;&#x0434; &#x043E;&#x0448;&#x0438;&#x0431;&#x043A;&#x0438;: {0}"
 
 };
 

@@ -51,7 +51,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
         RaycastHit info;
         Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out info, 100, LayerMask.GetMask("Tile", "Hover", "Highlight")))
+        if (Physics.Raycast(ray, out info, 100, LayerMask.GetMask("Tile", "Hover", "Highlight")) && !PauseScript.isPaused)
         {            
             // Get the indexes of the tile i've hit
             Vector2Int hitPosition = LookupTileIndex(info.transform.gameObject);

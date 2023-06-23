@@ -1,15 +1,7 @@
 [
-	{ "s": "HAVE", "p": [23, 22, 2] },
-	{ "s": "HAVING", "p": [2] },
 	{ "s": "HDD", "p": [4] },
-	{ "s": "HEAR", "p": [22] },
-	{ "s": "HELP", "p": [22, 20, 5] },
-	{ "s": "HELPS", "p": [2] },
-	{ "s": "HISTORY", "p": [3] },
-	{ "s": "HOLD", "p": [20] },
-	{ "s": "HOLDER", "p": [24] },
-	{ "s": "HOME", "p": [1] },
-	{ "s": "HOW", "p": [23] },
-	{ "s": "HTTPS", "p": [6] },
-	{ "s": "HTTPS://ITCH.IO", "p": [6] }
+	{ "s": "HSEPROJECTJACKAL", "p": [24] },
+	{ "s": "HSEPROJECTJACKAL@GMAIL.COM", "p": [24] },
+	{ "s": "HTTPS", "p": [7] },
+	{ "s": "HTTPS://MGZEPHYRR.ITCH.IO/JACKAL", "p": [7] }
 ]
