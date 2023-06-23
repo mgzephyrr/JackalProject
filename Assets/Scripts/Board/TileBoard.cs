@@ -22,6 +22,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
     // LOGIC
     private List<Vector2Int> availableMoves =new List<Vector2Int>();
+    private List<Vector2Int> availableMovesForHorse = new List<Vector2Int>();
     private int whiteTeam = 0, blackTeam = 2, redTeam = 1, blueTeam = 3, noneTeam = 4;
     public static GamePiece[,] gamePieces;
     private GamePiece currentlyDragging;
@@ -85,6 +86,11 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
                         //Допустимые для хода клетки
                         availableMoves = currentlyDragging.GetAvailableMoves(ref gamePieces, TILE_COUNT_X, TILE_COUNT_Y);
+                        if (gamePieces[hitPosition.x, hitPosition.y].isHorseTile)
+                        {
+                            //gamePieces[hitPosition.x, hitPosition.y].isHorseTile = false;
+                            availableMoves = currentlyDragging.GetHorseMoves(ref gamePieces);
+                        }
                         HighlightTiles();
                     }
                 }
@@ -124,6 +130,8 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
             if(horizontalPlane.Raycast(ray, out distance))
                 currentlyDragging.SetPosition(ray.GetPoint(distance) + Vector3.up * dragOffset);
         }
+
+
     }
 
     
@@ -233,7 +241,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         gamePieces[x, y].currentY = y;
         gamePieces[x, y].SetPosition(GetTileCenter(x,y), force);
     }
-    private Vector3 GetTileCenter(int x, int y)
+    public Vector3 GetTileCenter(int x, int y)
     {
         return new Vector3(x * tileSize, yOffset, y * tileSize) - bounds + new Vector3(tileSize/2, 0 , tileSize/2);
     }
@@ -246,7 +254,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
             tiles[availableMoves[i].x, availableMoves[i].y].layer = LayerMask.NameToLayer("Highlight");
         }
     }
-    private void RemoveHighlightTiles()
+    public void RemoveHighlightTiles()
     {
         for (int i = 0; i < availableMoves.Count; i++)
         {
@@ -263,8 +271,13 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
                 return true;
         return false;
     }
-    private bool MoveTo(GamePiece gp, int x, int y, bool isKilled = false)
+    public bool MoveTo(GamePiece gp, int x, int y, bool isKilled = false)
     {
+        if (gp.isHorseTile)
+        {
+            --turn;
+            gp.isHorseTile = false;
+        }
         Vector2Int previousPosition = new Vector2Int(gp.currentX, gp.currentY);
         if (isKilled)
         {
@@ -303,9 +316,11 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         gamePieces[previousPosition.x, previousPosition.y] = null;
 
         PositionSinglePiece(x, y);
-        turn++;//to-do Если пират будет наступать на стрелку, то ход будет меняться дважды, если челоек захочет нажать пробел
+
+        turn++;
         return true;
     }
+
     private void RevivePiece(GamePiece ogp)
     {
         if (ogp.team == 0)
@@ -398,6 +413,12 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     public void SpawnBear(int x, int y)
     {
         gamePieces[x, y] = SpawnPiece(GamePieceType.Bear, noneTeam);
+        PositionSinglePiece(x, y, true);
+    }
+
+    public void SpawnHorse(int x, int y)
+    {
+        gamePieces[x, y] = SpawnPiece(GamePieceType.Horse, noneTeam);
         PositionSinglePiece(x, y, true);
     }
 }
