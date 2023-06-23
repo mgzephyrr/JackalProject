@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     private Pirate pirate;
+    public TileBoard board;
     public GameObject MoneyButton;
 
     void Start()
@@ -16,11 +17,20 @@ public class Chest : MonoBehaviour
         if (TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)] != null)
         {
             pirate = TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)].GetComponent<Pirate>();
-            MoneyButton.SetActive(true);
+            if (pirate.team == board.turn % 4)
+                MoneyButton.SetActive(true);
+            else MoneyButton.SetActive(false);
         }
         else
         {
             MoneyButton.SetActive(false);
         }
     }
+    public void BringCoin()
+    {
+        pirate.isCoin = true;
+
+    }
+
+
 }

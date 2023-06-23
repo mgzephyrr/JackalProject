@@ -891,6 +891,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372033105}
   m_CullTransparentMesh: 1
+--- !u!1 &390821554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339565681811581288, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &390821559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390821554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e434560695bdc6458af4c4c4b75111e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
 --- !u!1 &440027372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1462,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 740889500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &740889500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,7 +2237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8bd95eecae4ef4fae450179683ffcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 0}
+  board: {fileID: 1413959646}
 --- !u!1 &1113474104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9081721210790688746, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -2593,6 +2623,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203254859}
   m_CullTransparentMesh: 1
+--- !u!1 &1208092862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4998133730519878307, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1208092867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208092862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e434560695bdc6458af4c4c4b75111e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 0}
 --- !u!1 &1305474134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4232,6 +4280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  board: {fileID: 0}
   MoneyButton: {fileID: 740889497}
 --- !u!1 &1704706890
 GameObject:
