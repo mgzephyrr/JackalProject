@@ -20,15 +20,14 @@ public class Chest : MonoBehaviour
             if (TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)] != null)
             {
                 pirate = TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)].GetComponent<Pirate>();
-
+                if (!isSpawn)
+                {
+                    money.SetActive(true);
+                    isSpawn = true;
+                }
                 if (pirate.team == (board.turn-board.dopTurn) % 4 && pirate.isCoin == false)
                 {
                     MoneyButton.SetActive(true);
-                    if (!isSpawn)
-                    {
-                        money.SetActive(true);
-                        isSpawn = true;
-                    }
                 }
                 else MoneyButton.SetActive(false);
             }
