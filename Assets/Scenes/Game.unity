@@ -1822,6 +1822,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562981121}
   m_CullTransparentMesh: 1
+--- !u!1 &609285753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1022316257100728361, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &609285758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609285753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9a42f98f096ce4e842dcc0adc8384b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
 --- !u!1001 &619910125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3290,6 +3308,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 1
   isSpawn: 1
+  money: {fileID: 0}
 --- !u!1 &948602400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +3710,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 4
   isSpawn: 0
+  money: {fileID: 0}
 --- !u!1 &1132583698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,6 +4195,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 2
   isSpawn: 1
+  money: {fileID: 0}
 --- !u!1 &1388419839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4842,6 +4863,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 3
   isSpawn: 1
+  money: {fileID: 0}
 --- !u!1 &1559619220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5015,6 +5037,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 1
   isSpawn: 0
+  money: {fileID: 0}
 --- !u!1 &1601148153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6200334832538176280, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -5815,6 +5838,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 1
   isSpawn: 0
+  money: {fileID: 0}
 --- !u!1 &1704706890
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6270,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948197498}
   m_CullTransparentMesh: 1
+--- !u!1 &1957973723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7630047975645211643, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1957973728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957973723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9a42f98f096ce4e842dcc0adc8384b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
 --- !u!1001 &1962177908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6336,6 +6378,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 1
   isSpawn: 0
+  money: {fileID: 0}
 --- !u!1001 &1977825115
 PrefabInstance:
   m_ObjectHideFlags: 0

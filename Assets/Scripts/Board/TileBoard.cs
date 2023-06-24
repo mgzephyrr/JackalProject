@@ -23,7 +23,6 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
     // LOGIC
     private List<Vector2Int> availableMoves =new List<Vector2Int>();
-    private List<Vector2Int> availableMovesForHorse = new List<Vector2Int>();
     private int whiteTeam = 0, blackTeam = 2, redTeam = 1, blueTeam = 3, noneTeam = 4;
     public static GamePiece[,] gamePieces;
     private GamePiece currentlyDragging;
@@ -34,7 +33,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     private Vector2Int currentHover;
     private Vector3 bounds;
     public int turn;
-    
+    public int dopTurn = 0;
 
     private void Awake()
     {
@@ -76,57 +75,52 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
                 currentHover = hitPosition;
                 tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");               
             }
+            var gp = gamePieces[hitPosition.x, hitPosition.y];
+            if (gp != null)
+            {
+                if (gp.isArrowsTile == true)
+                {
+                    dopTurn=1;
+                    currentlyDragging = gp;
+                    string type = SearchType(hitPosition.x, hitPosition.y);
+                    availableMoves = currentlyDragging.GetArrowsMoves(ref gamePieces, type);
+                    HighlightTiles();
+                    ContinueTurn(hitPosition);
+                }
+                if (gp.isHorseTile == true)
+                {
+                    dopTurn=1;
+                    currentlyDragging = gp;
+                    availableMoves = currentlyDragging.GetHorseMoves(ref gamePieces);
+                    HighlightTiles();
+                    ContinueTurn(hitPosition);
+                }
+                if (gp.isIceTile == true)
+                {
+                    dopTurn=1;
+                    currentlyDragging = gp;
+                    availableMoves = currentlyDragging.GetAvailableMoves(ref gamePieces, TILE_COUNT_X, TILE_COUNT_Y);
+                    HighlightTiles();
+                    ContinueTurn(hitPosition);
+                }
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
 
-                if (gamePieces[hitPosition.x, hitPosition.y] != null)
+                if (gp != null)
                 {
                     //твой ход? 
-                    if (gamePieces[hitPosition.x, hitPosition.y].team == turn % 4)
+                    if (gp.team == turn % 4)
                     {
-                        currentlyDragging = gamePieces[hitPosition.x, hitPosition.y];
-
+                        currentlyDragging = gp;
                         //Допустимые для хода клетки
                         availableMoves = currentlyDragging.GetAvailableMoves(ref gamePieces, TILE_COUNT_X, TILE_COUNT_Y);
-                        if (gamePieces[hitPosition.x, hitPosition.y].isHorseTile)
-                        {
-                            availableMoves = currentlyDragging.GetHorseMoves(ref gamePieces);
-                        }
-                        if (gamePieces[hitPosition.x, hitPosition.y].isArrowsTile)
-                        {
-                            string type = SearchType(hitPosition.x, hitPosition.y);
-                            availableMoves = currentlyDragging.GetArrowsMoves(ref gamePieces, type);
-                        }
                         HighlightTiles();
                     }
                 }
             }
-
-            if (Input.GetMouseButtonUp(0) && currentlyDragging != null)
-            {
-                Vector2Int previousPosition = new Vector2Int(currentlyDragging.currentX, currentlyDragging.currentY);
-
-                bool validMove = MoveTo(currentlyDragging, hitPosition.x, hitPosition.y);
-                if (!validMove)
-                    currentlyDragging.SetPosition(GetTileCenter(previousPosition.x, previousPosition.y));
-                currentlyDragging = null;
-                RemoveHighlightTiles();
-            }
-            else
-            {
-                if (currentHover == -Vector2Int.one)
-                {
-                    tiles[currentHover.x, currentHover.y].layer = (ContainsValidMove(ref availableMoves, currentHover)) ? LayerMask.NameToLayer("Highlight") : LayerMask.NameToLayer("Tile");
-                    currentHover = -Vector2Int.one;
-                }
-
-                if (currentlyDragging && Input.GetMouseButtonUp(0))
-                {
-                    currentlyDragging.SetPosition(GetTileCenter(currentlyDragging.currentX, currentlyDragging.currentY));
-                    currentlyDragging = null;
-                    RemoveHighlightTiles();
-                }
-            }
+            ContinueTurn(hitPosition);
         }
         if (currentlyDragging)
         {
@@ -138,7 +132,36 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
 
     }
+    private void ContinueTurn(Vector2Int hitPosition)
+    {
+        var gp = gamePieces[hitPosition.x, hitPosition.y];
+        if (Input.GetMouseButtonUp(0) && currentlyDragging != null)
+        {
+            Vector2Int previousPosition = new Vector2Int(currentlyDragging.currentX, currentlyDragging.currentY);
 
+            bool validMove = MoveTo(currentlyDragging, hitPosition.x, hitPosition.y);
+            if (!validMove)
+                currentlyDragging.SetPosition(GetTileCenter(previousPosition.x, previousPosition.y));
+
+            currentlyDragging = null;
+            RemoveHighlightTiles();
+        }
+        else
+        {
+            if (currentHover == -Vector2Int.one)
+            {
+                tiles[currentHover.x, currentHover.y].layer = (ContainsValidMove(ref availableMoves, currentHover)) ? LayerMask.NameToLayer("Highlight") : LayerMask.NameToLayer("Tile");
+                currentHover = -Vector2Int.one;
+            }
+
+            if (currentlyDragging && Input.GetMouseButtonUp(0))
+            {
+                currentlyDragging.SetPosition(GetTileCenter(currentlyDragging.currentX, currentlyDragging.currentY));
+                currentlyDragging = null;
+                RemoveHighlightTiles();
+            }
+        }
+    }
     // Generate the board
     private void GenerateAllTiles(float tileSize, int tileCountX, int tileCountY)
     {
@@ -314,12 +337,15 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
         PositionSinglePiece(x, y);
 
-        if (!gp.isHorseTile && !gp.isArrowsTile) turn++;
-        else
+        if (gp.isHorseTile || gp.isIceTile || gp.isArrowsTile)
         {
+            turn--;
             gp.isHorseTile = false;
             gp.isArrowsTile = false;
+            gp.isIceTile = false;
+            dopTurn = 0;
         }
+        turn++;
         return true;
     }
     string SearchType(int x, int y)
@@ -339,6 +365,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     }
     private void RevivePiece(GamePiece ogp)
     {
+        ((Pirate)ogp).isCoin = false;
         if (ogp.team == 0)
         {
             if (gamePieces[6, 0] is null)
@@ -429,13 +456,6 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     public void SpawnBear(int x, int y)
     {
         gamePieces[x, y] = SpawnPiece(GamePieceType.Bear, noneTeam);
-        PositionSinglePiece(x, y, true);
-    }
-
-    public void SpawnHorse(int x, int y)
-    {
-        SpawnPiece(GamePieceType.Horse, noneTeam);
-
         PositionSinglePiece(x, y, true);
     }
 
