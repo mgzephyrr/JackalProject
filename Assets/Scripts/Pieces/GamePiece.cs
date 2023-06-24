@@ -7,7 +7,8 @@ public enum GamePieceType
     None = 0,
     Pirate = 1,
     Bear = 2,
-    Missionary = 3
+    Horse = 2,
+    Money = 27
 }
 public class GamePiece : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class GamePiece : MonoBehaviour
     private Vector3 desiredPosition;
     private Vector3 desiredScale;
 
+    public bool isHorseTile = false;
+    public bool isArrowsTile = false;
+    public bool isIceTile = false;
+
     private void Start()
     {
         if (type == GamePieceType.Pirate)
@@ -28,6 +33,14 @@ public class GamePiece : MonoBehaviour
         if (type == GamePieceType.Bear) 
         {
             desiredScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
+        if (type == GamePieceType.Horse)
+        {
+            desiredScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
+        if (type == GamePieceType.Money)
+        {
+            desiredScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
     }
 
@@ -40,7 +53,16 @@ public class GamePiece : MonoBehaviour
     public virtual List<Vector2Int> GetAvailableMoves(ref GamePiece[,] board, int tileCountX, int tileCountY)
     {
         List<Vector2Int> r = new List<Vector2Int>();
-
+        return r;
+    }
+    public virtual List<Vector2Int> GetHorseMoves(ref GamePiece[,] board)
+    {
+        List<Vector2Int> r = new List<Vector2Int>();
+        return r;
+    }
+    public virtual List<Vector2Int> GetArrowsMoves(ref GamePiece[,] board, string type)
+    {
+        List<Vector2Int> r = new List<Vector2Int>();
         return r;
     }
     public virtual void SetPosition(Vector3 position, bool force = false)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
@@ -22,6 +23,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
     // LOGIC
     private List<Vector2Int> availableMoves =new List<Vector2Int>();
+    private List<Vector2Int> availableMovesForHorse = new List<Vector2Int>();
     private int whiteTeam = 0, blackTeam = 2, redTeam = 1, blueTeam = 3, noneTeam = 4;
     public static GamePiece[,] gamePieces;
     private GamePiece currentlyDragging;
@@ -76,6 +78,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
             }
             if (Input.GetMouseButtonDown(0))
             {
+
                 if (gamePieces[hitPosition.x, hitPosition.y] != null)
                 {
                     //твой ход? 
@@ -85,6 +88,15 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
                         //Допустимые для хода клетки
                         availableMoves = currentlyDragging.GetAvailableMoves(ref gamePieces, TILE_COUNT_X, TILE_COUNT_Y);
+                        if (gamePieces[hitPosition.x, hitPosition.y].isHorseTile)
+                        {
+                            availableMoves = currentlyDragging.GetHorseMoves(ref gamePieces);
+                        }
+                        if (gamePieces[hitPosition.x, hitPosition.y].isArrowsTile)
+                        {
+                            string type = SearchType(hitPosition.x, hitPosition.y);
+                            availableMoves = currentlyDragging.GetArrowsMoves(ref gamePieces, type);
+                        }
                         HighlightTiles();
                     }
                 }
@@ -95,7 +107,6 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
                 Vector2Int previousPosition = new Vector2Int(currentlyDragging.currentX, currentlyDragging.currentY);
 
                 bool validMove = MoveTo(currentlyDragging, hitPosition.x, hitPosition.y);
-
                 if (!validMove)
                     currentlyDragging.SetPosition(GetTileCenter(previousPosition.x, previousPosition.y));
                 currentlyDragging = null;
@@ -124,10 +135,9 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
             if(horizontalPlane.Raycast(ray, out distance))
                 currentlyDragging.SetPosition(ray.GetPoint(distance) + Vector3.up * dragOffset);
         }
+
+
     }
-
-    
-
 
     // Generate the board
     private void GenerateAllTiles(float tileSize, int tileCountX, int tileCountY)
@@ -303,8 +313,29 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         gamePieces[previousPosition.x, previousPosition.y] = null;
 
         PositionSinglePiece(x, y);
-        turn++;//to-do Если пират будет наступать на стрелку, то ход будет меняться дважды, если челоек захочет нажать пробел
+
+        if (!gp.isHorseTile && !gp.isArrowsTile) turn++;
+        else
+        {
+            gp.isHorseTile = false;
+            gp.isArrowsTile = false;
+        }
         return true;
+    }
+    string SearchType(int x, int y)
+    {
+        string type = "";
+        if (x == 5 && y == 2) type = "diagonal2Sand";
+        if ((x == 10 && y == 6)) type = "4diagonalsSand";
+        if ((x == 3 && y == 1) || (x == 2 &&  y == 3) || (x == 9 && y == 10)) type = "3diagonalsSand";
+        if ((x == 1 && y == 8) || (x == 2 && y == 6)) type = "diagonal1Sand";
+        if ((x == 5 && y == 2) || (x == 10 && y == 4) || (x == 6 && y == 11)) type = "diagonal2Sand";
+        if ((x == 6 && y == 3) || (x == 3 && y == 9)) type = "forwardGrass";
+        if ((x == 3 && y == 6)) type = "leftGrass";
+        if ((x == 8 && y == 8)) type = "rightGrass";
+        if ((x == 7 && y == 3) || (x == 6 && y == 5) || (x == 7 && y == 9)) type = "2diagonalsGrass";
+        if ((x == 4 && y == 5)) type = "4diagonalsGrass";
+        return type;
     }
     private void RevivePiece(GamePiece ogp)
     {
@@ -398,6 +429,19 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     public void SpawnBear(int x, int y)
     {
         gamePieces[x, y] = SpawnPiece(GamePieceType.Bear, noneTeam);
+        PositionSinglePiece(x, y, true);
+    }
+
+    public void SpawnHorse(int x, int y)
+    {
+        SpawnPiece(GamePieceType.Horse, noneTeam);
+
+        PositionSinglePiece(x, y, true);
+    }
+
+    public void SpawnMoney(int x, int y)
+    {
+        gamePieces[x, y] = SpawnPiece(GamePieceType.Money, noneTeam);
         PositionSinglePiece(x, y, true);
     }
 }

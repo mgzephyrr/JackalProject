@@ -71,10 +71,9 @@ public class CameraControled : MonoBehaviour
             transform.Translate(new Vector3(horizont, vertical, vertical) * Time.deltaTime * mult * speed, Space.Self);
 
             //зум по колесику мыши
-            //transform.position += transform.up * speed * Time.deltaTime * mult * Input.GetAxis("Mouse ScrollWheel");
             transform.Translate(new Vector3(0, 0, Input.GetAxis("Mouse ScrollWheel")) * Time.deltaTime * mult * zoomSpeed, Space.Self);
 
-            //ограничение на слишком сильное удаление или приближение камеры по координате y
+            //ограничение на слишком сильное удаление или приближение камеры
             transform.position = new Vector3(
                 Mathf.Clamp(transform.position.x, -20f, 20f),
                 Mathf.Clamp(transform.position.y, 3f, 12f),
@@ -84,18 +83,18 @@ public class CameraControled : MonoBehaviour
             //движение камеры по зажатой ПКМ
             if (Input.GetMouseButton(1)) //ЛКМ - 0, ПКМ - 1
             {
-                if (axes == RotationAxes.MouseX)
+                if (axes == RotationAxes.MouseX) //если поворот вправо-влево мышки
                 {
                     transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
                 }
-                else if (axes == RotationAxes.MouseY)
+                else if (axes == RotationAxes.MouseY) //если поворот вверх-вниз мышки
                 {
                     _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
                     _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
                     float rotationY = transform.localEulerAngles.y;
                     transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
                 }
-                else
+                else //если поворот по диагонале
                 {
                     _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
                     _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
