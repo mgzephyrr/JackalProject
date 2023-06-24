@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3715942701326690734}
   - component: {fileID: 4261673942096300611}
-  - component: {fileID: 7457055459725863968}
   m_Layer: 0
   m_Name: Horse
   m_TagString: Untagged
@@ -48,24 +47,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8319465574948283117, guid: 0c8b3e10f1de0c847a5168f2db2aec77, type: 3}
---- !u!114 &7457055459725863968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2858007156510692907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bdb2e3e228554489d104ccd0e636e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: 0
-  currentX: 0
-  currentY: 0
-  type: 2
-  isHorseTile: 0
-  isArrowsTile: 0
 --- !u!1001 &4042523384830272951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,29 +96,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c8b3e10f1de0c847a5168f2db2aec77, type: 3}
---- !u!1 &3807938930939631846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0c8b3e10f1de0c847a5168f2db2aec77, type: 3}
-  m_PrefabInstance: {fileID: 4042523384830272951}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2596155095889364871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807938930939631846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bdb2e3e228554489d104ccd0e636e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: 0
-  currentX: 0
-  currentY: 0
-  type: 0
-  isHorseTile: 0
-  isArrowsTile: 0
 --- !u!4 &4581098587747369564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c8b3e10f1de0c847a5168f2db2aec77, type: 3}
