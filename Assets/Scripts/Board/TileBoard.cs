@@ -314,7 +314,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
         PositionSinglePiece(x, y);
 
-        if (!gp.isHorseTile || !gp.isArrowsTile) turn++;
+        if (!gp.isHorseTile && !gp.isArrowsTile) turn++;
         else
         {
             gp.isHorseTile = false;
@@ -435,6 +435,12 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     public void SpawnHorse(int x, int y)
     {
         gamePieces[x, y] = SpawnPiece(GamePieceType.Horse, noneTeam);
+        PositionSinglePiece(x, y, true);
+    }
+
+    public void SpawnMoney(int x, int y)
+    {
+        gamePieces[x, y] = SpawnPiece(GamePieceType.Money, noneTeam);
         PositionSinglePiece(x, y, true);
     }
 }

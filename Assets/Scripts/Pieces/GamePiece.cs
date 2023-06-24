@@ -7,7 +7,8 @@ public enum GamePieceType
     None = 0,
     Pirate = 1,
     Bear = 2,
-    Horse = 2
+    Horse = 2,
+    Money = 27
 }
 public class GamePiece : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GamePiece : MonoBehaviour
 
     public bool isHorseTile = false;
     public bool isArrowsTile = false;
+    public bool isIceTile = false;
 
     private void Start()
     {
@@ -35,6 +37,10 @@ public class GamePiece : MonoBehaviour
         if (type == GamePieceType.Horse)
         {
             desiredScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
+        if (type == GamePieceType.Money)
+        {
+            desiredScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
     }
 

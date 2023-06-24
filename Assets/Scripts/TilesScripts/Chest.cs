@@ -8,6 +8,7 @@ public class Chest : MonoBehaviour
     public TileBoard board;
     public GameObject MoneyButton;
     public int numberOfMoney;
+    public bool isSpawn = false;
 
     void Start()
     {
@@ -15,22 +16,38 @@ public class Chest : MonoBehaviour
     }
     void Update()
     {
-        if (TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)] != null)
+        if (numberOfMoney != 0)
         {
-            pirate = TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)].GetComponent<Pirate>();
-            if (pirate.team == board.turn % 4)
-                MoneyButton.SetActive(true);
-            else MoneyButton.SetActive(false);
+            if (TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)] != null)
+            {
+                pirate = TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)].GetComponent<Pirate>();
+                if (pirate.team == board.turn % 4 && pirate.isCoin == false)
+                    MoneyButton.SetActive(true);
+                else MoneyButton.SetActive(false);
+            }
+            else
+            {
+                MoneyButton.SetActive(false);
+            }
+        }
+    }
+    public void BringCoin()
+    {
+        if (numberOfMoney != 0)
+        {
+            if (TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)] != null)
+            {
+                pirate = TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)].GetComponent<Pirate>();
+                MoneyButton.SetActive(false);
+                pirate.isCoin = true;
+                numberOfMoney--;
+                Destroy(gameObject);
+            }
         }
         else
         {
             MoneyButton.SetActive(false);
         }
-    }
-    public void BringCoin()
-    {
-        pirate.isCoin = true;
-        numberOfMoney--;
     }
 
 
