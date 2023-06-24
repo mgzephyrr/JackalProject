@@ -12,10 +12,6 @@ public class Chest : MonoBehaviour
     public bool isSpawn = false;
     public GameObject money;
 
-    void Start()
-    {
-        MoneyButton.SetActive(false);
-    }
     void Update()
     {
         if (numberOfMoney != 0)
