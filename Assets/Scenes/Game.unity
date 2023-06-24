@@ -358,6 +358,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 25642462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &25642464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 25642462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &25942114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -743,6 +748,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 35662095}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &35662097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 35662095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &48326725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5017135448939955802, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -915,6 +925,11 @@ PrefabInstance:
 --- !u!4 &71917099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 71917098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &71917100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 71917098}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &102880209
@@ -1261,6 +1276,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+--- !u!1 &156826055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+  m_PrefabInstance: {fileID: 156826054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &156826056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156826055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 1121520381}
+  numberOfMoney: 4
+  isSpawn: 0
 --- !u!1 &159301124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 421887784142682040, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -3594,6 +3630,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 747899986}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747899988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 747899986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &766510654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4320,6 +4361,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 853264039}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &853264041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 853264039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &859790519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4564,6 +4610,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 943612537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &943612539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 943612537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &948602400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4721,6 +4772,11 @@ PrefabInstance:
 --- !u!4 &968647616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 968647615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &968647617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 968647615}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &972391396 stripped
@@ -5127,6 +5183,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac2896e2d5e7f51499fec2a7e1c32304, type: 3}
+--- !u!114 &1104374200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 943612539}
+  numberOfMoney: 3
+  isSpawn: 0
 --- !u!1 &1113474104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9081721210790688746, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -5184,7 +5256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1413959646}
-  MoneyButton: {fileID: 740889497}
+  MoneyButton: {fileID: 25642464}
   numberOfMoney: 4
   isSpawn: 0
 --- !u!1 &1132583698
@@ -6040,6 +6112,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 1379172996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1379172998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 1379172996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1381216417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: e4e4d02b697e90d4c81cfb7d4c3c5019, type: 3}
@@ -6061,6 +6138,22 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   numberOfMoney: 2
   isSpawn: 1
+--- !u!114 &1386494988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 1529996183}
+  numberOfMoney: 2
+  isSpawn: 0
 --- !u!1 &1388419839
 GameObject:
   m_ObjectHideFlags: 0
@@ -6784,6 +6877,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 1529996181}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1529996183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 1529996181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550731221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: 11e3e1b79a7945343ade53f4831dbae6, type: 3}
@@ -6975,7 +7073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1413959646}
-  MoneyButton: {fileID: 740889497}
+  MoneyButton: {fileID: 35662097}
   numberOfMoney: 3
   isSpawn: 0
 --- !u!1 &1601148153 stripped
@@ -7587,6 +7685,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
   m_PrefabInstance: {fileID: 1641217321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1641217323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
+  m_PrefabInstance: {fileID: 1641217321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1648233619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7964,7 +8067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1413959646}
-  MoneyButton: {fileID: 740889497}
+  MoneyButton: {fileID: 1379172998}
   numberOfMoney: 1
   isSpawn: 0
 --- !u!1 &1704706890
@@ -8657,6 +8760,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e3e1b79a7945343ade53f4831dbae6, type: 3}
+--- !u!1 &1962177909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: 11e3e1b79a7945343ade53f4831dbae6, type: 3}
+  m_PrefabInstance: {fileID: 1962177908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1962177910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962177909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 747899988}
+  numberOfMoney: 4
+  isSpawn: 0
 --- !u!1 &1969451760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7739336684261961594, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -8675,7 +8799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1413959646}
-  MoneyButton: {fileID: 740889497}
+  MoneyButton: {fileID: 1641217323}
   numberOfMoney: 1
   isSpawn: 0
 --- !u!1001 &1977825115
@@ -10377,3 +10501,118 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8135858108849988837, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
   m_PrefabInstance: {fileID: 587095333420922246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8154145596927718513, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5447481130181983389, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2938243711710774215, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 70987201183153881, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5002130247425287367, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7137967187481927790, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3605720465145503826, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &587095333420922256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 968647617}
+  numberOfMoney: 2
+  isSpawn: 0
+--- !u!114 &587095333420922257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 1694822799}
+  numberOfMoney: 1
+  isSpawn: 0
+--- !u!114 &587095333420922258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 853264041}
+  numberOfMoney: 5
+  isSpawn: 0
+--- !u!114 &587095333420922259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 943612539}
+  numberOfMoney: 3
+  isSpawn: 0
+--- !u!114 &587095333420922260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587095333420922255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1413959646}
+  MoneyButton: {fileID: 71917100}
+  numberOfMoney: 2
+  isSpawn: 0
