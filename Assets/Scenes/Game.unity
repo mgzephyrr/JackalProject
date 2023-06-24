@@ -1463,13 +1463,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1132583702}
+        m_TargetAssemblyTypeName: Chest, Assembly-CSharp
+        m_MethodName: BringCoin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2220,6 +2220,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013051068}
   m_CullTransparentMesh: 1
+--- !u!1 &1022267761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2487605950398256435, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022267766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022267761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e434560695bdc6458af4c4c4b75111e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 0}
 --- !u!1 &1046869897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4876533733557777128, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -2269,6 +2287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1132583700}
   - component: {fileID: 1132583701}
+  - component: {fileID: 1132583702}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2304,6 +2323,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 1203254859}
+--- !u!114 &1132583702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132583698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 0}
+  MoneyButton: {fileID: 0}
+  numberOfMoney: 0
 --- !u!1 &1142383820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,8 +4314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def8a277b2633e84492019aa169d48fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 0}
+  board: {fileID: 1413959646}
   MoneyButton: {fileID: 740889497}
+  numberOfMoney: 1
 --- !u!1 &1704706890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4864,6 +4899,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1091009473299655942, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1203214963139634357, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
       propertyPath: waterDrag
       value: 2
@@ -5224,6 +5263,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4748176751417883060, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1c5b9bb10617cb45aa2f8918b5c020d, type: 2}
     - target: {fileID: 4876533733557777128, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
       propertyPath: m_IsActive
       value: 1

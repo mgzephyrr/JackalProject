@@ -7,6 +7,7 @@ public class Chest : MonoBehaviour
     private Pirate pirate;
     public TileBoard board;
     public GameObject MoneyButton;
+    public int numberOfMoney;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class Chest : MonoBehaviour
     public void BringCoin()
     {
         pirate.isCoin = true;
-
+        numberOfMoney--;
     }
 
 

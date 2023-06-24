@@ -326,6 +326,15 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     {
         string type = "";
         if (x == 5 && y == 2) type = "diagonal2Sand";
+        if ((x == 10 && y == 6)) type = "4diagonalsSand";
+        if ((x == 3 && y == 1) || (x == 2 &&  y == 3) || (x == 9 && y == 10)) type = "3diagonalsSand";
+        if ((x == 1 && y == 8) || (x == 2 && y == 6)) type = "diagonal1Sand";
+        if ((x == 5 && y == 2) || (x == 10 && y == 4) || (x == 6 && y == 11)) type = "diagonal2Sand";
+        if ((x == 6 && y == 3) || (x == 3 && y == 9)) type = "forwardGrass";
+        if ((x == 3 && y == 6)) type = "leftGrass";
+        if ((x == 8 && y == 8)) type = "rightGrass";
+        if ((x == 7 && y == 3) || (x == 6 && y == 5) || (x == 7 && y == 9)) type = "2diagonalsGrass";
+        if ((x == 4 && y == 5)) type = "4diagonalsGrass";
         return type;
     }
     private void RevivePiece(GamePiece ogp)
