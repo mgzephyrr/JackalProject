@@ -9,6 +9,8 @@ public class HorseTile : MonoBehaviour
     [SerializeField] public TileBoard board;
     private bool isCreated = false;
     private GamePiece piece;
+    public GameObject horse;
+
     //Pirate pirate;
 
     void Update()
@@ -19,7 +21,7 @@ public class HorseTile : MonoBehaviour
             piece.isHorseTile = true;
             if (!isCreated)
             {
-                board.SpawnHorse((int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5));
+                if (horse != null) horse.SetActive(true);
                 isCreated = true;
             }
         }

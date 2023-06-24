@@ -434,7 +434,8 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
 
     public void SpawnHorse(int x, int y)
     {
-        gamePieces[x, y] = SpawnPiece(GamePieceType.Horse, noneTeam);
+        SpawnPiece(GamePieceType.Horse, noneTeam);
+
         PositionSinglePiece(x, y, true);
     }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Pieces
 {
-    public class Money:GamePiece
+    public class Money
     {
 
     }

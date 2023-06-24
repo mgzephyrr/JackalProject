@@ -25,10 +25,10 @@ public class Pirate : GamePiece
         }
         if (type == "forwardGrass")
         {
-            if (board[currentX, currentY + 1] == null)
-                locations.Add(new Vector2Int(currentX, currentY + 1));
-            else if (board[currentX, currentY + 1].team != team)
-                locations.Add(new Vector2Int(currentX, currentY + 1));
+            if (board[currentX, currentY - 1] == null)
+                locations.Add(new Vector2Int(currentX, currentY - 1));
+            else if (board[currentX, currentY - 1].team != team)
+                locations.Add(new Vector2Int(currentX, currentY - 1));
         }
         if (type == "diagonal1Sand")
         {
@@ -68,15 +68,15 @@ public class Pirate : GamePiece
         }
         if (type == "2diagonalsGrass")
         {
-            if (board[currentX, currentY - 1] == null) //назад
-                locations.Add(new Vector2Int(currentX, currentY - 1));
-            else if (board[currentX, currentY - 1].team != team)
-                locations.Add(new Vector2Int(currentX, currentY - 1));
+            if (board[currentX, currentY + 1] == null) //вперед
+                locations.Add(new Vector2Int(currentX, currentY + 1));
+            else if (board[currentX, currentY + 1].team != team)
+                locations.Add(new Vector2Int(currentX, currentY + 1));
 
-            if (board[currentX + 1, currentY] == null) //вправо
-                locations.Add(new Vector2Int(currentX + 1, currentY));
-            else if (board[currentX + 1, currentY].team != team)
-                locations.Add(new Vector2Int(currentX + 1, currentY));
+            if (board[currentX - 1, currentY] == null) //влево
+                locations.Add(new Vector2Int(currentX - 1, currentY));
+            else if (board[currentX - 1, currentY].team != team)
+                locations.Add(new Vector2Int(currentX - 1, currentY));
         }
         if (type == "4diagonalsSand")
         {
@@ -102,20 +102,20 @@ public class Pirate : GamePiece
         }
         if (type == "3diagonalsSand")
         {
-            if (board[currentX + 1, currentY] == null) //вправо
-                locations.Add(new Vector2Int(currentX + 1, currentY));
-            else if (board[currentX + 1, currentY].team != team)
-                locations.Add(new Vector2Int(currentX + 1, currentY));
+            if (board[currentX - 1, currentY] == null) //влево
+                locations.Add(new Vector2Int(currentX - 1, currentY));
+            else if (board[currentX - 1, currentY].team != team)
+                locations.Add(new Vector2Int(currentX - 1, currentY));
 
-            if (board[currentX, currentY - 1] == null) //назад
-                locations.Add(new Vector2Int(currentX, currentY - 1));
-            else if (board[currentX, currentY - 1].team != team)
-                locations.Add(new Vector2Int(currentX, currentY - 1));
+            if (board[currentX, currentY + 1] == null) //назад
+                locations.Add(new Vector2Int(currentX, currentY + 1));
+            else if (board[currentX, currentY + 1].team != team)
+                locations.Add(new Vector2Int(currentX, currentY + 1));
 
-            if (board[currentX - 1, currentY + 1] == null) //вперед и влево
-                locations.Add(new Vector2Int(currentX - 1, currentY + 1));
-            else if (board[currentX - 1, currentY + 1].team != team)
-                locations.Add(new Vector2Int(currentX - 1, currentY + 1));
+            if (board[currentX + 1, currentY - 1] == null) //вперед и влево
+                locations.Add(new Vector2Int(currentX + 1, currentY - 1));
+            else if (board[currentX + 1, currentY - 1].team != team)
+                locations.Add(new Vector2Int(currentX + 1, currentY - 1));
         }
 
         return locations;

@@ -22,7 +22,9 @@ public class Chest : MonoBehaviour
             {
                 pirate = TileBoard.gamePieces[(int)(gameObject.transform.localPosition.x - 42.5), (int)(gameObject.transform.localPosition.z - 47.5)].GetComponent<Pirate>();
                 if (pirate.team == board.turn % 4 && pirate.isCoin == false)
+                {
                     MoneyButton.SetActive(true);
+                }
                 else MoneyButton.SetActive(false);
             }
             else
@@ -41,6 +43,13 @@ public class Chest : MonoBehaviour
                 MoneyButton.SetActive(false);
                 pirate.isCoin = true;
                 numberOfMoney--;
+                if (numberOfMoney != 0)
+                {
+                    string name = numberOfMoney.ToString() + gameObject.name.Substring(1);
+                    var newGameObject = GameObject.Find(name);
+                    Debug.Log(name);
+                    if (newGameObject != null) newGameObject.SetActive(true);
+                }
                 Destroy(gameObject);
             }
         }
