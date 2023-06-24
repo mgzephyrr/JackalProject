@@ -193,8 +193,6 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     {
         gamePieces = new GamePiece[TILE_COUNT_X, TILE_COUNT_Y];
 
-        
-
         //WhiteTeam
         gamePieces[5, 0] = SpawnPiece(GamePieceType.Pirate, whiteTeam);
         gamePieces[6, 0] = SpawnPiece(GamePieceType.Pirate, whiteTeam);
@@ -205,15 +203,27 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         gamePieces[0, 6] = SpawnPiece(GamePieceType.Pirate, redTeam);
         gamePieces[0, 7] = SpawnPiece(GamePieceType.Pirate, redTeam);
 
+        gamePieces[0, 5].transform.Rotate(0, 90f, 0);
+        gamePieces[0, 6].transform.Rotate(0, 90f, 0);
+        gamePieces[0, 7].transform.Rotate(0, 90f, 0);
+
         //BlackTeam
         gamePieces[5, 12] = SpawnPiece(GamePieceType.Pirate, blackTeam);
         gamePieces[6, 12] = SpawnPiece(GamePieceType.Pirate, blackTeam);
         gamePieces[7, 12] = SpawnPiece(GamePieceType.Pirate, blackTeam);
 
+        gamePieces[5, 12].transform.Rotate(0, 180f, 0);
+        gamePieces[6, 12].transform.Rotate(0, 180f, 0);
+        gamePieces[7, 12].transform.Rotate(0, 180f, 0);
+
         //BlueTeam
         gamePieces[12, 5] = SpawnPiece(GamePieceType.Pirate, blueTeam);
         gamePieces[12, 6] = SpawnPiece(GamePieceType.Pirate, blueTeam);
         gamePieces[12, 7] = SpawnPiece(GamePieceType.Pirate, blueTeam);
+
+        gamePieces[12, 5].transform.Rotate(0, 270f, 0);
+        gamePieces[12, 6].transform.Rotate(0, 270f, 0);
+        gamePieces[12, 7].transform.Rotate(0, 270f, 0);
     }
     private GamePiece SpawnPiece(GamePieceType type, int team)
     {
@@ -223,7 +233,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
         gp.team = team;
         MeshRenderer rend = gp.GetComponent<MeshRenderer>();
         if (rend != null)
-            gp.GetComponent<MeshRenderer>().material = teamMaterials[team];
+            gp.GetComponentInChildren<SkinnedMeshRenderer>().material = teamMaterials[team];
 
         return gp;
     }
