@@ -12,6 +12,7 @@ public class Chest : MonoBehaviour
     public GameObject money;
     public GameObject MoneyButton;
     public GameObject[] coins;
+    public GameObject nextObject;
 
     void Update()
     {
@@ -45,7 +46,8 @@ public class Chest : MonoBehaviour
         pirate.isCoin = true;
         coins[numberOfMoney-1].SetActive(false);
         numberOfMoney--;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        nextObject.SetActive(true);
     }
 
 
