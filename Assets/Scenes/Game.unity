@@ -2200,25 +2200,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &283230203 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3644652056812502907, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
-  m_PrefabInstance: {fileID: 587095333420922246}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &283230208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283230203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8bd95eecae4ef4fae450179683ffcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: {fileID: 1413959646}
-  horse: {fileID: 1407684159}
 --- !u!1 &287024613
 GameObject:
   m_ObjectHideFlags: 0
@@ -9921,7 +9902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1413959646}
-  horse: {fileID: 0}
+  horse: {fileID: 1407684159}
 --- !u!1001 &1332869652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13782,6 +13763,11 @@ RectTransform:
   m_AnchoredPosition: {x: 602, y: -454}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1686249002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5362092211276734499, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1693360989
 GameObject:
   m_ObjectHideFlags: 0
@@ -15147,7 +15133,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 746833589}
   coins:
   - {fileID: 1641217323}
-  nextObject: {fileID: 1969451760}
+  nextObject: {fileID: 1686249002}
 --- !u!1 &1974077801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
