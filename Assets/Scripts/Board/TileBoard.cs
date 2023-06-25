@@ -34,7 +34,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     private Vector3 bounds;
     public int turn;
     public int dopTurn = 0;
-
+    public int lostMoneys = 0;
     private void Awake()
     {
         turn = 0;
@@ -376,6 +376,7 @@ public class TileBoard : MonoBehaviour // ASSIGN TO TILEBLOCKS
     private void RevivePiece(GamePiece ogp)
     {
         ((Pirate)ogp).isCoin = false;
+        lostMoneys++;
         if (ogp.team == 0)
         {
             if (gamePieces[6, 0] is null)
