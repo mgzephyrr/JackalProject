@@ -1621,7 +1621,7 @@ MonoBehaviour:
   - {fileID: 943750167}
   - {fileID: 707608487}
   - {fileID: 1320240888}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 2098403396}
 --- !u!1 &132394585 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7295560907100119082, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -1748,6 +1748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+--- !u!1 &156826055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+  m_PrefabInstance: {fileID: 156826054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &159301124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 421887784142682040, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -1790,7 +1795,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 1242342217}
   coins:
   - {fileID: 678696820}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 587095333420922249}
 --- !u!1 &229221341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +2012,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 1592761648}
   coins:
   - {fileID: 822574787}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 847693377}
 --- !u!1 &267919705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,7 +4381,7 @@ MonoBehaviour:
   coins:
   - {fileID: 678696820}
   - {fileID: 1529996183}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 193357081}
 --- !u!1001 &629056818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4474,7 +4479,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 1350867841}
   coins:
   - {fileID: 130810861}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 680176512}
 --- !u!1001 &639986561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4548,6 +4553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f553a158b44fb5478a6904dc50f431e, type: 3}
+--- !u!1 &639986562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: 5f553a158b44fb5478a6904dc50f431e, type: 3}
+  m_PrefabInstance: {fileID: 639986561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &640608423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,7 +4988,7 @@ MonoBehaviour:
   coins:
   - {fileID: 130810861}
   - {fileID: 744506421}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 632550994}
 --- !u!1 &678696820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
@@ -5057,6 +5067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+--- !u!1 &680176512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+  m_PrefabInstance: {fileID: 680176511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694365794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7169,6 +7184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+--- !u!1 &847693377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: ddfd9b1adab69ac498eeab09f367367a, type: 3}
+  m_PrefabInstance: {fileID: 847693376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &853023387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7942129775903853138, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
@@ -8184,7 +8204,7 @@ MonoBehaviour:
   coins:
   - {fileID: 1974077801}
   - {fileID: 1198866513}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1053218200}
 --- !u!1 &1035336438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8428,7 +8448,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 1464677344}
   coins:
   - {fileID: 1974077801}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 156826055}
 --- !u!1 &1056221959 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6103664986243312922, guid: e4e4d02b697e90d4c81cfb7d4c3c5019, type: 3}
@@ -8459,7 +8479,7 @@ MonoBehaviour:
   coins:
   - {fileID: 614351839}
   - {fileID: 968647617}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 587095333420922251}
 --- !u!1 &1081031696
 GameObject:
   m_ObjectHideFlags: 0
@@ -8660,7 +8680,7 @@ MonoBehaviour:
   - {fileID: 1198866513}
   - {fileID: 1400796594}
   - {fileID: 25642464}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1866124127}
 --- !u!1 &1132583698
 GameObject:
   m_ObjectHideFlags: 0
@@ -9079,7 +9099,7 @@ MonoBehaviour:
   coins:
   - {fileID: 822574787}
   - {fileID: 943750167}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 249425915}
 --- !u!1 &1171090851
 GameObject:
   m_ObjectHideFlags: 0
@@ -9796,7 +9816,7 @@ MonoBehaviour:
   - {fileID: 744506421}
   - {fileID: 754101557}
   - {fileID: 747899988}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1461758687}
 --- !u!1 &1305474134
 GameObject:
   m_ObjectHideFlags: 0
@@ -10578,7 +10598,7 @@ MonoBehaviour:
   - {fileID: 130810861}
   - {fileID: 744506421}
   - {fileID: 754101557}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 676688336}
 --- !u!1 &1464677344
 GameObject:
   m_ObjectHideFlags: 0
@@ -11079,7 +11099,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 1986528037}
   coins:
   - {fileID: 752586890}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 639986562}
 --- !u!1 &1518179563
 GameObject:
   m_ObjectHideFlags: 0
@@ -13921,7 +13941,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 740889497}
   coins:
   - {fileID: 1379172998}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 587095333420922256}
 --- !u!1 &1704706890
 GameObject:
   m_ObjectHideFlags: 0
@@ -14083,7 +14103,7 @@ MonoBehaviour:
   coins:
   - {fileID: 1534550472}
   - {fileID: 1747194554}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1892757585}
 --- !u!1 &1743034694
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,7 +14642,7 @@ MonoBehaviour:
   - {fileID: 1974077801}
   - {fileID: 1198866513}
   - {fileID: 1400796594}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1033828449}
 --- !u!1 &1892559414
 GameObject:
   m_ObjectHideFlags: 0
@@ -14681,7 +14701,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 2073062487}
   coins:
   - {fileID: 1534550472}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 587095333420922250}
 --- !u!1001 &1923582144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15127,7 +15147,7 @@ MonoBehaviour:
   MoneyButton: {fileID: 746833589}
   coins:
   - {fileID: 1641217323}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1969451760}
 --- !u!1 &1974077801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16844265ebdaf3142b64727af97ec197, type: 3}
@@ -16196,7 +16216,7 @@ MonoBehaviour:
   - {fileID: 822574787}
   - {fileID: 943750167}
   - {fileID: 707608487}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1154110385}
 --- !u!1 &2105051137
 GameObject:
   m_ObjectHideFlags: 0
@@ -18197,9 +18217,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8135858108849988837, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
   m_PrefabInstance: {fileID: 587095333420922246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1812511079041900834, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8682499799188809197, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587095333420922251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2938243711710774215, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 402536697086427969, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
   m_PrefabInstance: {fileID: 587095333420922246}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &587095333420922253 stripped
@@ -18215,6 +18250,11 @@ GameObject:
 --- !u!1 &587095333420922255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3605720465145503826, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
+  m_PrefabInstance: {fileID: 587095333420922246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &587095333420922256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 70987201183153881, guid: 36e95864340f28745b2bfa1d2c01f36c, type: 3}
   m_PrefabInstance: {fileID: 587095333420922246}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &587095333420922258
@@ -18240,7 +18280,7 @@ MonoBehaviour:
   - {fileID: 707608487}
   - {fileID: 1320240888}
   - {fileID: 853264041}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 131278287}
 --- !u!114 &587095333420922259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18262,7 +18302,7 @@ MonoBehaviour:
   - {fileID: 1534550472}
   - {fileID: 1747194554}
   - {fileID: 943612539}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1712369913}
 --- !u!114 &587095333420922260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18283,7 +18323,7 @@ MonoBehaviour:
   coins:
   - {fileID: 752586890}
   - {fileID: 71917100}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 1516511710}
 --- !u!114 &587095333420922269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18303,4 +18343,4 @@ MonoBehaviour:
   MoneyButton: {fileID: 1675816867}
   coins:
   - {fileID: 614351839}
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 587095333420922252}
